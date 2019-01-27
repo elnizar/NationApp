@@ -21,12 +21,20 @@ class DetailViewController: UIViewController {
     var latitude : String?
     var longitude : String?
     var id : Int?
+    var stateOfConnetion : Bool?
+
     override func viewDidLoad() {
-        nameLabel.text = name
-        let flagUrl = NSURL(string: flag!)
-        flagImg.af_setImage(withURL: flagUrl! as URL)
-        latitudeLabel.text = latitude
-        longitudeLabel.text = longitude
+        if(stateOfConnetion!){
+            nameLabel.text = name
+            let flagUrl = NSURL(string: flag!)
+            flagImg.af_setImage(withURL: flagUrl! as URL)
+            latitudeLabel.text = latitude
+            longitudeLabel.text = longitude
+        }else {
+            nameLabel.text = name
+            latitudeLabel.text = latitude
+            longitudeLabel.text = longitude
+        }
 
         super.viewDidLoad()
         

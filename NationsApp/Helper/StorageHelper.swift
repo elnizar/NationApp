@@ -90,6 +90,7 @@ class StorageHelper {
             let test = try managedContext?.fetch(fetchRequest)
             let getObject = test![0] as! NSManagedObject
             note = getObject.value(forKey: "note") as? String
+            print("Note : \(note!)")
             
             
         } catch let error as NSError {

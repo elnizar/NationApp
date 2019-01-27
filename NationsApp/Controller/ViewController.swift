@@ -53,6 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.tableView.reloadData()
                 self.tableView.es.stopPullToRefresh(ignoreDate: true)
             }else {
+                print("you are in offline mode")
                 self.stateOfConnetion = false
                 //test if core data empty or not
                 if StorageHelper.getAllCountrys().count > 0 {
@@ -75,16 +76,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath)
-        
-        let label = cell.viewWithTag(2) as! UILabel
-        let imageView = cell.viewWithTag(1) as! UIImageView
-        
-        let country = countries[indexPath.row]
-        
-        label.text = country.name
-        
-        let flagUrl = NSURL(string: country.flag!)
-        imageView.af_setImage(withURL: flagUrl! as URL)
+
+        if stateOfConnetion == true {
+            
+            let label = cell.viewWithTag(2) as! UILabel
+            let imageView = cell.viewWithTag(1) as! UIImageView
+            let country = countries[indexPath.row]
+            label.text = country.name
+            let flagUrl = NSURL(string: country.flag!)
+            imageView.af_setImage(withURL: flagUrl! as URL)
+
+        }
+        else{
+            let label = cell.viewWithTag(2) as! UILabel
+            let country = countries[indexPath.row]
+            label.text = country.name
+        }
         
         return cell
     }
@@ -101,13 +108,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "homeToDetail") {
             // initialize new view controller and cast it as your view controller
-            let viewController = segue.destination as! DetailViewController
+            let detailViewController = segue.destination as! DetailViewController
             // your new view controller should have property that will store passed value
-            viewController.name = name
-            viewController.flag = flag
-            viewController.latitude = latitude
-            viewController.longitude = longitude
-            viewController.id = id
+            detailViewController.stateOfConnetion = stateOfConnetion
+            detailViewController.name = name
+            detailViewController.flag = flag
+            detailViewController.latitude = latitude
+            detailViewController.longitude = longitude
+            detailViewController.id = id
 
             
         }
