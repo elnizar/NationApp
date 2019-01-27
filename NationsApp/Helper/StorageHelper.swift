@@ -91,7 +91,6 @@ class StorageHelper {
             let test = try managedContext?.fetch(fetchRequest)
             let getObject = test![0] as! NSManagedObject
             note = getObject.value(forKey: "note") as? String
-            var lat = getObject.value(forKey: "latitude") as? String
             if note == nil {
                 note = ""
             }
