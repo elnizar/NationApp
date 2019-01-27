@@ -34,7 +34,7 @@ class StorageHelper {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate?.persistentContainer.viewContext
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName : "CountryC")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        fetchRequest.predicate = NSPredicate(format: "id = \(id)")
         do{
             let test = try managedContext?.fetch(fetchRequest)
             let objectUpdate = test![0] as! NSManagedObject
@@ -84,14 +84,17 @@ class StorageHelper {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate?.persistentContainer.viewContext
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName : "CountryC")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        print("id :  \(id)")
+        fetchRequest.predicate = NSPredicate(format: "id = \(id)")
         do {
             
             let test = try managedContext?.fetch(fetchRequest)
             let getObject = test![0] as! NSManagedObject
             note = getObject.value(forKey: "note") as? String
-            print("Note : \(note!)")
-            
+            var lat = getObject.value(forKey: "latitude") as? String
+            if note == nil {
+                note = ""
+            }
             
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")

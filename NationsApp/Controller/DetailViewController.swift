@@ -22,21 +22,44 @@ class DetailViewController: UIViewController {
     var longitude : String?
     var id : Int?
     var stateOfConnetion : Bool?
-
+    var note : String = ""
     override func viewDidLoad() {
+        note = StorageHelper.getCountry(id: Int(id!))
         if(stateOfConnetion!){
             nameLabel.text = name
             let flagUrl = NSURL(string: flag!)
             flagImg.af_setImage(withURL: flagUrl! as URL)
             latitudeLabel.text = latitude
             longitudeLabel.text = longitude
+            noteLabel.text = note
+            
         }else {
             nameLabel.text = name
             latitudeLabel.text = latitude
             longitudeLabel.text = longitude
+            noteLabel.text = note
         }
 
         super.viewDidLoad()
+        
+    }
+    @IBAction func goToNote(_ sender: Any) {
+        
+        performSegue(withIdentifier: "detailToNote", sender: self)
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        note = StorageHelper.getCountry(id: Int(id!))
+        noteLabel.text = note
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "detailToNote") {
+            // initialize new view controller and cast it as your view controller
+            let noteViewController = segue.destination as! NoteViewController
+            //passed value
+            noteViewController.id = id
+            
+        }
         
     }
 

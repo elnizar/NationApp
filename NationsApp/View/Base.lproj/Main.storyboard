@@ -208,7 +208,7 @@
                     <navigationItem key="navigationItem" title="Title" id="2c1-Ih-2pt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LVp-w0-txN">
                             <connections>
-                                <segue destination="2mD-hg-NnJ" kind="presentation" id="EA9-Tt-69D"/>
+                                <action selector="goToNote:" destination="QSf-a7-x89" id="EwA-q8-lv1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,6 +218,7 @@
                         <outlet property="longitudeLabel" destination="mEh-Pu-Y39" id="dnZ-Yx-uOi"/>
                         <outlet property="nameLabel" destination="qN1-2p-kvX" id="3XC-1H-ZK7"/>
                         <outlet property="noteLabel" destination="NKt-Jj-fPz" id="hO5-0U-NhW"/>
+                        <segue destination="2mD-hg-NnJ" kind="presentation" identifier="detailToNote" id="CbH-cg-kzj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHn-E5-7ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>

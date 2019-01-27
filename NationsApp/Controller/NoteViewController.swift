@@ -11,9 +11,11 @@ import UIKit
 class NoteViewController: UIViewController {
 
     @IBOutlet weak var note: UITextView!
+    var id : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        note.becomeFirstResponder()
+        note.text = StorageHelper.getCountry(id: Int(id!))
         // Do any additional setup after loading the view.
     }
 
@@ -22,9 +24,14 @@ class NoteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func saveNote(_ sender: Any) {
+        if note.text != nil {
+            StorageHelper.insertAndUpdateNote(id: id!, note: note.text)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
