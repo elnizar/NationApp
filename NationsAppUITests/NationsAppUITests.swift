@@ -29,6 +29,15 @@ class NationsAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let deadlineTime = DispatchTime.now() + .seconds(5)
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            let app = XCUIApplication()
+            app.tables/*@START_MENU_TOKEN@*/.staticTexts["Croatia"]/*[[".cells.staticTexts[\"Croatia\"]",".staticTexts[\"Croatia\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            app.navigationBars["Title"].buttons["Back"].tap()
+        }
+        
+
+        
     }
 
 }

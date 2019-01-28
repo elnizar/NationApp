@@ -21,6 +21,7 @@
 		29640BFF21FB8CF100BBE287 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29640BFE21FB8CF100BBE287 /* Constants.swift */; };
 		2B2F3E2B21FE17BC00A6FA0F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F3E2A21FE17BC00A6FA0F /* DetailViewController.swift */; };
 		2B2F3E2D21FE17CE00A6FA0F /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F3E2C21FE17CE00A6FA0F /* NoteViewController.swift */; };
+		2B2F3E2F21FE827700A6FA0F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F3E2E21FE827700A6FA0F /* CardView.swift */; };
 		3FB7B706C2449820C1303341 /* Pods_NationsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4122F3EE237A292B6386B448 /* Pods_NationsApp.framework */; };
 		530BB8C14438CF8A55A7E28A /* Pods_NationsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9AAB6692C4210ABBF5CA4D /* Pods_NationsAppTests.framework */; };
 		C9478AC33700568E909BDBDD /* Pods_NationsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB00D79FEA45BCE26B9BE093 /* Pods_NationsAppUITests.framework */; };
@@ -65,6 +66,7 @@
 		29640BFE21FB8CF100BBE287 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B2F3E2A21FE17BC00A6FA0F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2B2F3E2C21FE17CE00A6FA0F /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		2B2F3E2E21FE827700A6FA0F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4122F3EE237A292B6386B448 /* Pods_NationsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9AAB6692C4210ABBF5CA4D /* Pods_NationsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFD74606FCFBA93A52BBCC1 /* Pods-NationsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationsAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NationsAppTests/Pods-NationsAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				29640BC421FB7CD100BBE287 /* Main.storyboard */,
+				2B2F3E2E21FE827700A6FA0F /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				29640BC321FB7CD100BBE287 /* ViewController.swift in Sources */,
 				29640BF521FB839600BBE287 /* Country.swift in Sources */,
 				29640BC921FB7CD100BBE287 /* NationsApp.xcdatamodeld in Sources */,
+				2B2F3E2F21FE827700A6FA0F /* CardView.swift in Sources */,
 				2B2F3E2D21FE17CE00A6FA0F /* NoteViewController.swift in Sources */,
 				29640BFF21FB8CF100BBE287 /* Constants.swift in Sources */,
 				29640BC121FB7CD100BBE287 /* AppDelegate.swift in Sources */,
